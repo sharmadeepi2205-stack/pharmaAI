@@ -8,6 +8,16 @@ const app = express()
 app.use(cors())
 app.use(express.json())
 
+// Health check endpoint (for Render monitoring)
+app.get('/', (req, res) => {
+  res.json({ 
+    success: true,
+    message: 'PharmaGuard Backend is running',
+    version: '1.0.0',
+    timestamp: new Date().toISOString()
+  })
+})
+
 // Ensure logs directory exists
 const logsDir = path.join(__dirname, 'logs')
 if (!fs.existsSync(logsDir)) {
