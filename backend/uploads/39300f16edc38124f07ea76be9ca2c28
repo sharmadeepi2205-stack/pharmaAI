@@ -1,0 +1,12 @@
+##fileformat=VCFv4.2
+##FILTER=<ID=PASS,Description="All filters passed">
+##INFO=<ID=PX,Number=1,Type=String,Description="Pharmacogenomic Gene">
+##INFO=<ID=DP,Number=1,Type=Integer,Description="Sequencing Depth">
+##FORMAT=<ID=GT,Number=1,Type=String,Description="Genotype">
+#CHROM	POS	ID	REF	ALT	QUAL	FILTER	INFO	FORMAT	SAMPLE
+chr1	97544301	rs3918290	C	T	100	PASS	PX=DPYD;DP=60	GT	0/1
+chr19	41516301	rs12248560	C	T	95	PASS	PX=CYP2C19;DP=45	GT	1/1
+chr22	42126640	rs3892097	C	T	90	PASS	PX=CYP2D6;DP=50	GT	1/1
+chr12	21178615	rs4149056	T	C	80	PASS	PX=SLCO1B1;DP=30	GT	0/1
+chr10	94762731	rs1057910	A	C	85	PASS	PX=CYP2C9;DP=35	GT	1/1
+chr6	18130918	rs1800460	A	G	98	PASS	PX=TPMT;DP=40	GT	1/1

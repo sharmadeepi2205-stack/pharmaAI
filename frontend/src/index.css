@@ -1,0 +1,46 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root{
+	--bg: #0a0e27;
+	--surface: #1a1f3a;
+	--text: #f0f4f8;
+	--muted: #8892a8;
+	--primary: #00a2ff;
+	--success: #00aa00;
+	--warning: #ff8800;
+	--danger: #ff3333;
+}
+
+html,body,#root{height:100%}
+
+body {
+	font-family: Inter, ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial;
+	background-color: #000000;
+	color: #f0f4f8;
+	-webkit-font-smoothing:antialiased;
+	-moz-osx-font-smoothing:grayscale;
+}
+
+h1,h2,h3,h4{line-height:1.15;color:#f0f4f8}
+
+.card{background:#1a1f3a;border-radius:12px;box-shadow:0 1px 3px rgba(0,0,0,0.5),0 4px 6px rgba(0,0,0,0.3);border:1px solid #2d3548}
+.muted{color:var(--muted)}
+
+.badge {font-weight:700;padding:0.25rem 0.6rem;border-radius:9999px;font-size:0.78rem}
+.badge.safe{background:#004400;color:#66ff66}
+.badge.warn{background:#664400;color:#ffdd99}
+.badge.danger{background:#660000;color:#ff6666}
+
+.transition-soft{transition: all 200ms cubic-bezier(.2,.9,.2,1)}
+
+.skeleton{background:linear-gradient(90deg, rgba(30,40,70,0.6) 0%, rgba(26,31,58,0.9) 50%, rgba(30,40,70,0.6) 100%);background-size:200% 100%;animation:shimmer 1.2s infinite}
+@keyframes shimmer{0%{background-position:200% 0}100%{background-position:-200% 0}}
+
+.tooltip{background:rgba(30,40,70,0.98);color:#f0f4f8;padding:6px 8px;border-radius:8px;font-size:12px;border:1px solid #00a2ff}
+
+.gradient-hero{background:linear-gradient(135deg,#0a0e27 0%, #1a1f3a 40%, #2d3548 100%)}
+

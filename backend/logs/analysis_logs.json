@@ -1,0 +1,1274 @@
+[
+  {
+    "clinical_recommendation": "Switch to Morphine or Hydromorphone (non-CYP2D6 dependent opioids).",
+    "drug": "CODEINE",
+    "llm_generated_explanation": {
+      "summary": "Clinical reasoning note: Variant detected affecting drug metabolism pathway."
+    },
+    "patient_id": "RIFT_VALIDATION_002",
+    "pharmacogenomic_profile": {
+      "detected_variants": [
+        {
+          "rsid": "rs3892097",
+          "star_allele": "*3"
+        }
+      ],
+      "diplotype": "*1/*3",
+      "gene": "CYP2D6",
+      "phenotype": "PM"
+    },
+    "quality_metrics": {
+      "vcf_parsing_success": true
+    },
+    "risk_assessment": {
+      "confidence_score": 0.98,
+      "dosage_guideline": "Standard Codeine doses (30mg-60mg) will fail to provide analgesia.",
+      "severity": "moderate"
+    },
+    "risk_label": "Ineffective",
+    "timestamp": "2026-02-19T19:42:30.057135Z",
+    "logged_at": "2026-02-19T19:42:31.747Z",
+    "log_id": "LOG_1771530151747_lyphgtz"
+  },
+  {
+    "clinical_recommendation": "Switch to Prasugrel (10mg/day) or Ticagrelor (90mg bid) for antiplatelet therapy.",
+    "drug": "CLOPIDOGREL",
+    "llm_generated_explanation": {
+      "summary": "Clinical reasoning note: Variant detected affecting drug metabolism pathway."
+    },
+    "patient_id": "RIFT_VALIDATION_002",
+    "pharmacogenomic_profile": {
+      "detected_variants": [
+        {
+          "rsid": "rs12248560",
+          "star_allele": "*17"
+        }
+      ],
+      "diplotype": "*1/*17",
+      "gene": "CYP2C19",
+      "phenotype": "IM"
+    },
+    "quality_metrics": {
+      "vcf_parsing_success": true
+    },
+    "risk_assessment": {
+      "confidence_score": 0.98,
+      "dosage_guideline": "Standard Clopidogrel (75mg) will have reduced efficacy.",
+      "severity": "moderate"
+    },
+    "risk_label": "Adjust Dosage",
+    "timestamp": "2026-02-19T19:42:30.607338Z",
+    "logged_at": "2026-02-19T19:42:31.747Z",
+    "log_id": "LOG_1771530151747_aptjlpk"
+  },
+  {
+    "clinical_recommendation": "No dosage adjustment required per current CPIC guidelines.",
+    "drug": "WARFARIN",
+    "llm_generated_explanation": {
+      "summary": "Clinical reasoning note: Variant detected affecting drug metabolism pathway."
+    },
+    "patient_id": "RIFT_VALIDATION_002",
+    "pharmacogenomic_profile": {
+      "detected_variants": [
+        {
+          "rsid": "rs1057910",
+          "star_allele": "*3"
+        }
+      ],
+      "diplotype": "*1/*3",
+      "gene": "CYP2C9",
+      "phenotype": "Normal Metabolizer (NM)"
+    },
+    "quality_metrics": {
+      "vcf_parsing_success": true
+    },
+    "risk_assessment": {
+      "confidence_score": 0.98,
+      "dosage_guideline": "Standard clinical dosing.",
+      "severity": "low"
+    },
+    "risk_label": "Safe",
+    "timestamp": "2026-02-19T19:42:30.839488Z",
+    "logged_at": "2026-02-19T19:42:31.747Z",
+    "log_id": "LOG_1771530151747_88x6sw1"
+  },
+  {
+    "clinical_recommendation": "Avoid higher doses to prevent statin-induced myopathy (muscle damage).",
+    "drug": "SIMVASTATIN",
+    "llm_generated_explanation": {
+      "summary": "Clinical reasoning note: Variant detected affecting drug metabolism pathway."
+    },
+    "patient_id": "RIFT_VALIDATION_002",
+    "pharmacogenomic_profile": {
+      "detected_variants": [
+        {
+          "rsid": "rs4149056",
+          "star_allele": "*5"
+        }
+      ],
+      "diplotype": "*1/*5",
+      "gene": "SLCO1B1",
+      "phenotype": "IM"
+    },
+    "quality_metrics": {
+      "vcf_parsing_success": true
+    },
+    "risk_assessment": {
+      "confidence_score": 0.98,
+      "dosage_guideline": "Limit Simvastatin to 20mg per day.",
+      "severity": "low"
+    },
+    "risk_label": "Adjust Dosage",
+    "timestamp": "2026-02-19T19:42:31.022535Z",
+    "logged_at": "2026-02-19T19:42:31.747Z",
+    "log_id": "LOG_1771530151747_ht1w91n"
+  },
+  {
+    "clinical_recommendation": "High risk of life-threatening myelosuppression. Monitor blood counts weekly.",
+    "drug": "AZATHIOPRINE",
+    "llm_generated_explanation": {
+      "summary": "Clinical reasoning note: Variant detected affecting drug metabolism pathway."
+    },
+    "patient_id": "RIFT_VALIDATION_002",
+    "pharmacogenomic_profile": {
+      "detected_variants": [
+        {
+          "rsid": "rs1800460",
+          "star_allele": "*3A"
+        }
+      ],
+      "diplotype": "*1/*3A",
+      "gene": "TPMT",
+      "phenotype": "PM"
+    },
+    "quality_metrics": {
+      "vcf_parsing_success": true
+    },
+    "risk_assessment": {
+      "confidence_score": 0.98,
+      "dosage_guideline": "Reduce Azathioprine dose by 90% (give 10% of standard).",
+      "severity": "high"
+    },
+    "risk_label": "Toxic",
+    "timestamp": "2026-02-19T19:42:31.249588Z",
+    "logged_at": "2026-02-19T19:42:31.747Z",
+    "log_id": "LOG_1771530151747_fpsta3q"
+  },
+  {
+    "clinical_recommendation": "Extreme risk of fatal toxicity. Alternative: Use Capecitabine with 50% dose reduction if mandatory.",
+    "drug": "FLUOROURACIL",
+    "llm_generated_explanation": {
+      "summary": "Clinical reasoning note: Variant detected affecting drug metabolism pathway."
+    },
+    "patient_id": "RIFT_VALIDATION_002",
+    "pharmacogenomic_profile": {
+      "detected_variants": [
+        {
+          "rsid": "rs3918290",
+          "star_allele": "*2A"
+        }
+      ],
+      "diplotype": "*1/*2A",
+      "gene": "DPYD",
+      "phenotype": "PM"
+    },
+    "quality_metrics": {
+      "vcf_parsing_success": true
+    },
+    "risk_assessment": {
+      "confidence_score": 0.98,
+      "dosage_guideline": "Reduce dose by 50% or avoid Fluorouracil entirely.",
+      "severity": "critical"
+    },
+    "risk_label": "Toxic",
+    "timestamp": "2026-02-19T19:42:31.475560Z",
+    "logged_at": "2026-02-19T19:42:31.747Z",
+    "log_id": "LOG_1771530151747_19m33da"
+  },
+  {
+    "clinical_recommendation": "No dosage adjustment required per current CPIC guidelines.",
+    "drug": "CODEINE",
+    "llm_generated_explanation": {
+      "summary": "Clinical reasoning note: Variant detected affecting drug metabolism pathway."
+    },
+    "patient_id": "RIFT_VALIDATION_002",
+    "pharmacogenomic_profile": {
+      "detected_variants": [],
+      "diplotype": "*1/*1",
+      "gene": "CYP2D6",
+      "phenotype": "Normal Metabolizer (NM)"
+    },
+    "quality_metrics": {
+      "vcf_parsing_success": true
+    },
+    "risk_assessment": {
+      "confidence_score": 0.85,
+      "dosage_guideline": "Standard clinical dosing.",
+      "severity": "low"
+    },
+    "risk_label": "Safe",
+    "timestamp": "2026-02-19T19:42:49.305086Z",
+    "logged_at": "2026-02-19T19:42:52.217Z",
+    "log_id": "LOG_1771530172217_ouekjlg"
+  },
+  {
+    "clinical_recommendation": "No dosage adjustment required per current CPIC guidelines.",
+    "drug": "CLOPIDOGREL",
+    "llm_generated_explanation": {
+      "summary": "Clinical reasoning note: Variant detected affecting drug metabolism pathway."
+    },
+    "patient_id": "RIFT_VALIDATION_002",
+    "pharmacogenomic_profile": {
+      "detected_variants": [],
+      "diplotype": "*1/*1",
+      "gene": "CYP2C19",
+      "phenotype": "Normal Metabolizer (NM)"
+    },
+    "quality_metrics": {
+      "vcf_parsing_success": true
+    },
+    "risk_assessment": {
+      "confidence_score": 0.85,
+      "dosage_guideline": "Standard clinical dosing.",
+      "severity": "low"
+    },
+    "risk_label": "Safe",
+    "timestamp": "2026-02-19T19:42:51.552159Z",
+    "logged_at": "2026-02-19T19:42:52.217Z",
+    "log_id": "LOG_1771530172217_dvwx3yw"
+  },
+  {
+    "clinical_recommendation": "No dosage adjustment required per current CPIC guidelines.",
+    "drug": "WARFARIN",
+    "llm_generated_explanation": {
+      "summary": "Clinical reasoning note: Variant detected affecting drug metabolism pathway."
+    },
+    "patient_id": "RIFT_VALIDATION_002",
+    "pharmacogenomic_profile": {
+      "detected_variants": [],
+      "diplotype": "*1/*1",
+      "gene": "CYP2C9",
+      "phenotype": "Normal Metabolizer (NM)"
+    },
+    "quality_metrics": {
+      "vcf_parsing_success": true
+    },
+    "risk_assessment": {
+      "confidence_score": 0.85,
+      "dosage_guideline": "Standard clinical dosing.",
+      "severity": "low"
+    },
+    "risk_label": "Safe",
+    "timestamp": "2026-02-19T19:42:51.654900Z",
+    "logged_at": "2026-02-19T19:42:52.217Z",
+    "log_id": "LOG_1771530172217_wk8c4je"
+  },
+  {
+    "clinical_recommendation": "No dosage adjustment required per current CPIC guidelines.",
+    "drug": "SIMVASTATIN",
+    "llm_generated_explanation": {
+      "summary": "Clinical reasoning note: Variant detected affecting drug metabolism pathway."
+    },
+    "patient_id": "RIFT_VALIDATION_002",
+    "pharmacogenomic_profile": {
+      "detected_variants": [],
+      "diplotype": "*1/*1",
+      "gene": "SLCO1B1",
+      "phenotype": "Normal Metabolizer (NM)"
+    },
+    "quality_metrics": {
+      "vcf_parsing_success": true
+    },
+    "risk_assessment": {
+      "confidence_score": 0.85,
+      "dosage_guideline": "Standard clinical dosing.",
+      "severity": "low"
+    },
+    "risk_label": "Safe",
+    "timestamp": "2026-02-19T19:42:51.781944Z",
+    "logged_at": "2026-02-19T19:42:52.217Z",
+    "log_id": "LOG_1771530172217_y7rdlb1"
+  },
+  {
+    "clinical_recommendation": "No dosage adjustment required per current CPIC guidelines.",
+    "drug": "AZATHIOPRINE",
+    "llm_generated_explanation": {
+      "summary": "Clinical reasoning note: Variant detected affecting drug metabolism pathway."
+    },
+    "patient_id": "RIFT_VALIDATION_002",
+    "pharmacogenomic_profile": {
+      "detected_variants": [],
+      "diplotype": "*1/*1",
+      "gene": "TPMT",
+      "phenotype": "Normal Metabolizer (NM)"
+    },
+    "quality_metrics": {
+      "vcf_parsing_success": true
+    },
+    "risk_assessment": {
+      "confidence_score": 0.85,
+      "dosage_guideline": "Standard clinical dosing.",
+      "severity": "low"
+    },
+    "risk_label": "Safe",
+    "timestamp": "2026-02-19T19:42:51.877941Z",
+    "logged_at": "2026-02-19T19:42:52.217Z",
+    "log_id": "LOG_1771530172217_vrjp5ad"
+  },
+  {
+    "clinical_recommendation": "No dosage adjustment required per current CPIC guidelines.",
+    "drug": "FLUOROURACIL",
+    "llm_generated_explanation": {
+      "summary": "Clinical reasoning note: Variant detected affecting drug metabolism pathway."
+    },
+    "patient_id": "RIFT_VALIDATION_002",
+    "pharmacogenomic_profile": {
+      "detected_variants": [],
+      "diplotype": "*1/*1",
+      "gene": "DPYD",
+      "phenotype": "Normal Metabolizer (NM)"
+    },
+    "quality_metrics": {
+      "vcf_parsing_success": true
+    },
+    "risk_assessment": {
+      "confidence_score": 0.85,
+      "dosage_guideline": "Standard clinical dosing.",
+      "severity": "low"
+    },
+    "risk_label": "Safe",
+    "timestamp": "2026-02-19T19:42:51.981875Z",
+    "logged_at": "2026-02-19T19:42:52.217Z",
+    "log_id": "LOG_1771530172217_0n68w2g"
+  },
+  {
+    "clinical_recommendation": "Switch to Morphine or Hydromorphone (non-CYP2D6 dependent opioids).",
+    "drug": "CODEINE",
+    "llm_generated_explanation": {
+      "summary": "Clinical reasoning note: Variant detected affecting drug metabolism pathway."
+    },
+    "patient_id": "RIFT_VALIDATION_002",
+    "pharmacogenomic_profile": {
+      "detected_variants": [
+        {
+          "rsid": "rs3892097",
+          "star_allele": "*3"
+        }
+      ],
+      "diplotype": "*1/*3",
+      "gene": "CYP2D6",
+      "phenotype": "PM"
+    },
+    "quality_metrics": {
+      "vcf_parsing_success": true
+    },
+    "risk_assessment": {
+      "confidence_score": 0.98,
+      "dosage_guideline": "Standard Codeine doses (30mg-60mg) will fail to provide analgesia.",
+      "severity": "moderate"
+    },
+    "risk_label": "Ineffective",
+    "timestamp": "2026-02-19T19:54:38.070518Z",
+    "logged_at": "2026-02-19T19:54:39.573Z",
+    "log_id": "LOG_1771530879573_vbf0ogz"
+  },
+  {
+    "clinical_recommendation": "Switch to Prasugrel (10mg/day) or Ticagrelor (90mg bid) for antiplatelet therapy.",
+    "drug": "CLOPIDOGREL",
+    "llm_generated_explanation": {
+      "summary": "Clinical reasoning note: Variant detected affecting drug metabolism pathway."
+    },
+    "patient_id": "RIFT_VALIDATION_002",
+    "pharmacogenomic_profile": {
+      "detected_variants": [
+        {
+          "rsid": "rs12248560",
+          "star_allele": "*17"
+        }
+      ],
+      "diplotype": "*1/*17",
+      "gene": "CYP2C19",
+      "phenotype": "IM"
+    },
+    "quality_metrics": {
+      "vcf_parsing_success": true
+    },
+    "risk_assessment": {
+      "confidence_score": 0.98,
+      "dosage_guideline": "Standard Clopidogrel (75mg) will have reduced efficacy.",
+      "severity": "moderate"
+    },
+    "risk_label": "Adjust Dosage",
+    "timestamp": "2026-02-19T19:54:38.361991Z",
+    "logged_at": "2026-02-19T19:54:39.573Z",
+    "log_id": "LOG_1771530879573_bmbdd47"
+  },
+  {
+    "clinical_recommendation": "No dosage adjustment required per current CPIC guidelines.",
+    "drug": "WARFARIN",
+    "llm_generated_explanation": {
+      "summary": "Clinical reasoning note: Variant detected affecting drug metabolism pathway."
+    },
+    "patient_id": "RIFT_VALIDATION_002",
+    "pharmacogenomic_profile": {
+      "detected_variants": [
+        {
+          "rsid": "rs1057910",
+          "star_allele": "*3"
+        }
+      ],
+      "diplotype": "*1/*3",
+      "gene": "CYP2C9",
+      "phenotype": "Normal Metabolizer (NM)"
+    },
+    "quality_metrics": {
+      "vcf_parsing_success": true
+    },
+    "risk_assessment": {
+      "confidence_score": 0.98,
+      "dosage_guideline": "Standard clinical dosing.",
+      "severity": "low"
+    },
+    "risk_label": "Safe",
+    "timestamp": "2026-02-19T19:54:38.522054Z",
+    "logged_at": "2026-02-19T19:54:39.573Z",
+    "log_id": "LOG_1771530879573_9cms0yv"
+  },
+  {
+    "clinical_recommendation": "Avoid higher doses to prevent statin-induced myopathy (muscle damage).",
+    "drug": "SIMVASTATIN",
+    "llm_generated_explanation": {
+      "summary": "Clinical reasoning note: Variant detected affecting drug metabolism pathway."
+    },
+    "patient_id": "RIFT_VALIDATION_002",
+    "pharmacogenomic_profile": {
+      "detected_variants": [
+        {
+          "rsid": "rs4149056",
+          "star_allele": "*5"
+        }
+      ],
+      "diplotype": "*1/*5",
+      "gene": "SLCO1B1",
+      "phenotype": "IM"
+    },
+    "quality_metrics": {
+      "vcf_parsing_success": true
+    },
+    "risk_assessment": {
+      "confidence_score": 0.98,
+      "dosage_guideline": "Limit Simvastatin to 20mg per day.",
+      "severity": "low"
+    },
+    "risk_label": "Adjust Dosage",
+    "timestamp": "2026-02-19T19:54:38.719290Z",
+    "logged_at": "2026-02-19T19:54:39.573Z",
+    "log_id": "LOG_1771530879573_4i1hp5k"
+  },
+  {
+    "clinical_recommendation": "High risk of life-threatening myelosuppression. Monitor blood counts weekly.",
+    "drug": "AZATHIOPRINE",
+    "llm_generated_explanation": {
+      "summary": "Clinical reasoning note: Variant detected affecting drug metabolism pathway."
+    },
+    "patient_id": "RIFT_VALIDATION_002",
+    "pharmacogenomic_profile": {
+      "detected_variants": [
+        {
+          "rsid": "rs1800460",
+          "star_allele": "*3A"
+        }
+      ],
+      "diplotype": "*1/*3A",
+      "gene": "TPMT",
+      "phenotype": "PM"
+    },
+    "quality_metrics": {
+      "vcf_parsing_success": true
+    },
+    "risk_assessment": {
+      "confidence_score": 0.98,
+      "dosage_guideline": "Reduce Azathioprine dose by 90% (give 10% of standard).",
+      "severity": "high"
+    },
+    "risk_label": "Toxic",
+    "timestamp": "2026-02-19T19:54:39.008449Z",
+    "logged_at": "2026-02-19T19:54:39.573Z",
+    "log_id": "LOG_1771530879573_dn1fyw3"
+  },
+  {
+    "clinical_recommendation": "Extreme risk of fatal toxicity. Alternative: Use Capecitabine with 50% dose reduction if mandatory.",
+    "drug": "FLUOROURACIL",
+    "llm_generated_explanation": {
+      "summary": "Clinical reasoning note: Variant detected affecting drug metabolism pathway."
+    },
+    "patient_id": "RIFT_VALIDATION_002",
+    "pharmacogenomic_profile": {
+      "detected_variants": [
+        {
+          "rsid": "rs3918290",
+          "star_allele": "*2A"
+        }
+      ],
+      "diplotype": "*1/*2A",
+      "gene": "DPYD",
+      "phenotype": "PM"
+    },
+    "quality_metrics": {
+      "vcf_parsing_success": true
+    },
+    "risk_assessment": {
+      "confidence_score": 0.98,
+      "dosage_guideline": "Reduce dose by 50% or avoid Fluorouracil entirely.",
+      "severity": "critical"
+    },
+    "risk_label": "Toxic",
+    "timestamp": "2026-02-19T19:54:39.332497Z",
+    "logged_at": "2026-02-19T19:54:39.573Z",
+    "log_id": "LOG_1771530879573_ul7ne5y"
+  },
+  {
+    "clinical_recommendation": "Switch to Morphine or Hydromorphone (non-CYP2D6 dependent opioids).",
+    "drug": "CODEINE",
+    "llm_generated_explanation": {
+      "summary": "Clinical reasoning note: Variant detected affecting drug metabolism pathway."
+    },
+    "patient_id": "RIFT_VALIDATION_002",
+    "pharmacogenomic_profile": {
+      "detected_variants": [
+        {
+          "rsid": "rs3892097",
+          "star_allele": "*3"
+        }
+      ],
+      "diplotype": "*1/*3",
+      "gene": "CYP2D6",
+      "phenotype": "PM"
+    },
+    "quality_metrics": {
+      "vcf_parsing_success": true
+    },
+    "risk_assessment": {
+      "confidence_score": 0.98,
+      "dosage_guideline": "Standard Codeine doses (30mg-60mg) will fail to provide analgesia.",
+      "severity": "moderate"
+    },
+    "risk_label": "Ineffective",
+    "timestamp": "2026-02-19T19:58:10.937187Z",
+    "logged_at": "2026-02-19T19:58:11.816Z",
+    "log_id": "LOG_1771531091816_6yszpsa"
+  },
+  {
+    "clinical_recommendation": "Switch to Prasugrel (10mg/day) or Ticagrelor (90mg bid) for antiplatelet therapy.",
+    "drug": "CLOPIDOGREL",
+    "llm_generated_explanation": {
+      "summary": "Clinical reasoning note: Variant detected affecting drug metabolism pathway."
+    },
+    "patient_id": "RIFT_VALIDATION_002",
+    "pharmacogenomic_profile": {
+      "detected_variants": [
+        {
+          "rsid": "rs12248560",
+          "star_allele": "*17"
+        }
+      ],
+      "diplotype": "*1/*17",
+      "gene": "CYP2C19",
+      "phenotype": "IM"
+    },
+    "quality_metrics": {
+      "vcf_parsing_success": true
+    },
+    "risk_assessment": {
+      "confidence_score": 0.98,
+      "dosage_guideline": "Standard Clopidogrel (75mg) will have reduced efficacy.",
+      "severity": "moderate"
+    },
+    "risk_label": "Adjust Dosage",
+    "timestamp": "2026-02-19T19:58:11.045676Z",
+    "logged_at": "2026-02-19T19:58:11.816Z",
+    "log_id": "LOG_1771531091816_4pmhavu"
+  },
+  {
+    "clinical_recommendation": "No dosage adjustment required per current CPIC guidelines.",
+    "drug": "WARFARIN",
+    "llm_generated_explanation": {
+      "summary": "Clinical reasoning note: Variant detected affecting drug metabolism pathway."
+    },
+    "patient_id": "RIFT_VALIDATION_002",
+    "pharmacogenomic_profile": {
+      "detected_variants": [
+        {
+          "rsid": "rs1057910",
+          "star_allele": "*3"
+        }
+      ],
+      "diplotype": "*1/*3",
+      "gene": "CYP2C9",
+      "phenotype": "Normal Metabolizer (NM)"
+    },
+    "quality_metrics": {
+      "vcf_parsing_success": true
+    },
+    "risk_assessment": {
+      "confidence_score": 0.98,
+      "dosage_guideline": "Standard clinical dosing.",
+      "severity": "low"
+    },
+    "risk_label": "Safe",
+    "timestamp": "2026-02-19T19:58:11.131628Z",
+    "logged_at": "2026-02-19T19:58:11.816Z",
+    "log_id": "LOG_1771531091816_w7wc8x5"
+  },
+  {
+    "clinical_recommendation": "Avoid higher doses to prevent statin-induced myopathy (muscle damage).",
+    "drug": "SIMVASTATIN",
+    "llm_generated_explanation": {
+      "summary": "Clinical reasoning note: Variant detected affecting drug metabolism pathway."
+    },
+    "patient_id": "RIFT_VALIDATION_002",
+    "pharmacogenomic_profile": {
+      "detected_variants": [
+        {
+          "rsid": "rs4149056",
+          "star_allele": "*5"
+        }
+      ],
+      "diplotype": "*1/*5",
+      "gene": "SLCO1B1",
+      "phenotype": "IM"
+    },
+    "quality_metrics": {
+      "vcf_parsing_success": true
+    },
+    "risk_assessment": {
+      "confidence_score": 0.98,
+      "dosage_guideline": "Limit Simvastatin to 20mg per day.",
+      "severity": "low"
+    },
+    "risk_label": "Adjust Dosage",
+    "timestamp": "2026-02-19T19:58:11.456541Z",
+    "logged_at": "2026-02-19T19:58:11.816Z",
+    "log_id": "LOG_1771531091816_lvu7vqd"
+  },
+  {
+    "clinical_recommendation": "High risk of life-threatening myelosuppression. Monitor blood counts weekly.",
+    "drug": "AZATHIOPRINE",
+    "llm_generated_explanation": {
+      "summary": "Clinical reasoning note: Variant detected affecting drug metabolism pathway."
+    },
+    "patient_id": "RIFT_VALIDATION_002",
+    "pharmacogenomic_profile": {
+      "detected_variants": [
+        {
+          "rsid": "rs1800460",
+          "star_allele": "*3A"
+        }
+      ],
+      "diplotype": "*1/*3A",
+      "gene": "TPMT",
+      "phenotype": "PM"
+    },
+    "quality_metrics": {
+      "vcf_parsing_success": true
+    },
+    "risk_assessment": {
+      "confidence_score": 0.98,
+      "dosage_guideline": "Reduce Azathioprine dose by 90% (give 10% of standard).",
+      "severity": "high"
+    },
+    "risk_label": "Toxic",
+    "timestamp": "2026-02-19T19:58:11.562539Z",
+    "logged_at": "2026-02-19T19:58:11.816Z",
+    "log_id": "LOG_1771531091816_trp6o32"
+  },
+  {
+    "clinical_recommendation": "Extreme risk of fatal toxicity. Alternative: Use Capecitabine with 50% dose reduction if mandatory.",
+    "drug": "FLUOROURACIL",
+    "llm_generated_explanation": {
+      "summary": "Clinical reasoning note: Variant detected affecting drug metabolism pathway."
+    },
+    "patient_id": "RIFT_VALIDATION_002",
+    "pharmacogenomic_profile": {
+      "detected_variants": [
+        {
+          "rsid": "rs3918290",
+          "star_allele": "*2A"
+        }
+      ],
+      "diplotype": "*1/*2A",
+      "gene": "DPYD",
+      "phenotype": "PM"
+    },
+    "quality_metrics": {
+      "vcf_parsing_success": true
+    },
+    "risk_assessment": {
+      "confidence_score": 0.98,
+      "dosage_guideline": "Reduce dose by 50% or avoid Fluorouracil entirely.",
+      "severity": "critical"
+    },
+    "risk_label": "Toxic",
+    "timestamp": "2026-02-19T19:58:11.649992Z",
+    "logged_at": "2026-02-19T19:58:11.816Z",
+    "log_id": "LOG_1771531091816_6l61jzv"
+  },
+  {
+    "clinical_recommendation": "Switch to Morphine or Hydromorphone (non-CYP2D6 dependent opioids).",
+    "drug": "CODEINE",
+    "llm_generated_explanation": {
+      "summary": "Clinical reasoning note: Variant detected affecting drug metabolism pathway."
+    },
+    "patient_id": "RIFT_VALIDATION_002",
+    "pharmacogenomic_profile": {
+      "detected_variants": [
+        {
+          "rsid": "rs3892097",
+          "star_allele": "*3"
+        }
+      ],
+      "diplotype": "*1/*3",
+      "gene": "CYP2D6",
+      "phenotype": "PM"
+    },
+    "quality_metrics": {
+      "vcf_parsing_success": true
+    },
+    "risk_assessment": {
+      "confidence_score": 0.98,
+      "dosage_guideline": "Standard Codeine doses (30mg-60mg) will fail to provide analgesia.",
+      "severity": "moderate"
+    },
+    "risk_label": "Ineffective",
+    "timestamp": "2026-02-19T20:50:55.761485Z",
+    "logged_at": "2026-02-19T20:50:57.277Z",
+    "log_id": "LOG_1771534257279_412zncb"
+  },
+  {
+    "clinical_recommendation": "Switch to Prasugrel (10mg/day) or Ticagrelor (90mg bid) for antiplatelet therapy.",
+    "drug": "CLOPIDOGREL",
+    "llm_generated_explanation": {
+      "summary": "Clinical reasoning note: Variant detected affecting drug metabolism pathway."
+    },
+    "patient_id": "RIFT_VALIDATION_002",
+    "pharmacogenomic_profile": {
+      "detected_variants": [
+        {
+          "rsid": "rs12248560",
+          "star_allele": "*17"
+        }
+      ],
+      "diplotype": "*1/*17",
+      "gene": "CYP2C19",
+      "phenotype": "IM"
+    },
+    "quality_metrics": {
+      "vcf_parsing_success": true
+    },
+    "risk_assessment": {
+      "confidence_score": 0.98,
+      "dosage_guideline": "Standard Clopidogrel (75mg) will have reduced efficacy.",
+      "severity": "moderate"
+    },
+    "risk_label": "Adjust Dosage",
+    "timestamp": "2026-02-19T20:50:56.425503Z",
+    "logged_at": "2026-02-19T20:50:57.280Z",
+    "log_id": "LOG_1771534257280_c6mjmq2"
+  },
+  {
+    "clinical_recommendation": "No dosage adjustment required per current CPIC guidelines.",
+    "drug": "WARFARIN",
+    "llm_generated_explanation": {
+      "summary": "Clinical reasoning note: Variant detected affecting drug metabolism pathway."
+    },
+    "patient_id": "RIFT_VALIDATION_002",
+    "pharmacogenomic_profile": {
+      "detected_variants": [
+        {
+          "rsid": "rs1057910",
+          "star_allele": "*3"
+        }
+      ],
+      "diplotype": "*1/*3",
+      "gene": "CYP2C9",
+      "phenotype": "Normal Metabolizer (NM)"
+    },
+    "quality_metrics": {
+      "vcf_parsing_success": true
+    },
+    "risk_assessment": {
+      "confidence_score": 0.98,
+      "dosage_guideline": "Standard clinical dosing.",
+      "severity": "low"
+    },
+    "risk_label": "Safe",
+    "timestamp": "2026-02-19T20:50:56.572364Z",
+    "logged_at": "2026-02-19T20:50:57.280Z",
+    "log_id": "LOG_1771534257280_zyi5csm"
+  },
+  {
+    "clinical_recommendation": "Avoid higher doses to prevent statin-induced myopathy (muscle damage).",
+    "drug": "SIMVASTATIN",
+    "llm_generated_explanation": {
+      "summary": "Clinical reasoning note: Variant detected affecting drug metabolism pathway."
+    },
+    "patient_id": "RIFT_VALIDATION_002",
+    "pharmacogenomic_profile": {
+      "detected_variants": [
+        {
+          "rsid": "rs4149056",
+          "star_allele": "*5"
+        }
+      ],
+      "diplotype": "*1/*5",
+      "gene": "SLCO1B1",
+      "phenotype": "IM"
+    },
+    "quality_metrics": {
+      "vcf_parsing_success": true
+    },
+    "risk_assessment": {
+      "confidence_score": 0.98,
+      "dosage_guideline": "Limit Simvastatin to 20mg per day.",
+      "severity": "low"
+    },
+    "risk_label": "Adjust Dosage",
+    "timestamp": "2026-02-19T20:50:56.758006Z",
+    "logged_at": "2026-02-19T20:50:57.280Z",
+    "log_id": "LOG_1771534257280_xvubcj2"
+  },
+  {
+    "clinical_recommendation": "High risk of life-threatening myelosuppression. Monitor blood counts weekly.",
+    "drug": "AZATHIOPRINE",
+    "llm_generated_explanation": {
+      "summary": "Clinical reasoning note: Variant detected affecting drug metabolism pathway."
+    },
+    "patient_id": "RIFT_VALIDATION_002",
+    "pharmacogenomic_profile": {
+      "detected_variants": [
+        {
+          "rsid": "rs1800460",
+          "star_allele": "*3A"
+        }
+      ],
+      "diplotype": "*1/*3A",
+      "gene": "TPMT",
+      "phenotype": "PM"
+    },
+    "quality_metrics": {
+      "vcf_parsing_success": true
+    },
+    "risk_assessment": {
+      "confidence_score": 0.98,
+      "dosage_guideline": "Reduce Azathioprine dose by 90% (give 10% of standard).",
+      "severity": "high"
+    },
+    "risk_label": "Toxic",
+    "timestamp": "2026-02-19T20:50:56.914162Z",
+    "logged_at": "2026-02-19T20:50:57.280Z",
+    "log_id": "LOG_1771534257280_gg7tcuy"
+  },
+  {
+    "clinical_recommendation": "Extreme risk of fatal toxicity. Alternative: Use Capecitabine with 50% dose reduction if mandatory.",
+    "drug": "FLUOROURACIL",
+    "llm_generated_explanation": {
+      "summary": "Clinical reasoning note: Variant detected affecting drug metabolism pathway."
+    },
+    "patient_id": "RIFT_VALIDATION_002",
+    "pharmacogenomic_profile": {
+      "detected_variants": [
+        {
+          "rsid": "rs3918290",
+          "star_allele": "*2A"
+        }
+      ],
+      "diplotype": "*1/*2A",
+      "gene": "DPYD",
+      "phenotype": "PM"
+    },
+    "quality_metrics": {
+      "vcf_parsing_success": true
+    },
+    "risk_assessment": {
+      "confidence_score": 0.98,
+      "dosage_guideline": "Reduce dose by 50% or avoid Fluorouracil entirely.",
+      "severity": "critical"
+    },
+    "risk_label": "Toxic",
+    "timestamp": "2026-02-19T20:50:57.025275Z",
+    "logged_at": "2026-02-19T20:50:57.280Z",
+    "log_id": "LOG_1771534257280_5aujw8b"
+  },
+  {
+    "clinical_recommendation": "Switch to Morphine or Hydromorphone (non-CYP2D6 dependent opioids).",
+    "drug": "CODEINE",
+    "llm_generated_explanation": {
+      "summary": "Clinical reasoning note: Variant detected affecting drug metabolism pathway."
+    },
+    "patient_id": "RIFT_VALIDATION_002",
+    "pharmacogenomic_profile": {
+      "detected_variants": [
+        {
+          "rsid": "rs3892097",
+          "star_allele": "*3"
+        }
+      ],
+      "diplotype": "*1/*3",
+      "gene": "CYP2D6",
+      "phenotype": "PM"
+    },
+    "quality_metrics": {
+      "vcf_parsing_success": true
+    },
+    "risk_assessment": {
+      "confidence_score": 0.98,
+      "dosage_guideline": "Standard Codeine doses (30mg-60mg) will fail to provide analgesia.",
+      "severity": "moderate"
+    },
+    "risk_label": "Ineffective",
+    "timestamp": "2026-02-19T20:57:08.631595Z",
+    "logged_at": "2026-02-19T20:57:09.417Z",
+    "log_id": "LOG_1771534629419_8pgzksb"
+  },
+  {
+    "clinical_recommendation": "Switch to Prasugrel (10mg/day) or Ticagrelor (90mg bid) for antiplatelet therapy.",
+    "drug": "CLOPIDOGREL",
+    "llm_generated_explanation": {
+      "summary": "Clinical reasoning note: Variant detected affecting drug metabolism pathway."
+    },
+    "patient_id": "RIFT_VALIDATION_002",
+    "pharmacogenomic_profile": {
+      "detected_variants": [
+        {
+          "rsid": "rs12248560",
+          "star_allele": "*17"
+        }
+      ],
+      "diplotype": "*1/*17",
+      "gene": "CYP2C19",
+      "phenotype": "IM"
+    },
+    "quality_metrics": {
+      "vcf_parsing_success": true
+    },
+    "risk_assessment": {
+      "confidence_score": 0.98,
+      "dosage_guideline": "Standard Clopidogrel (75mg) will have reduced efficacy.",
+      "severity": "moderate"
+    },
+    "risk_label": "Adjust Dosage",
+    "timestamp": "2026-02-19T20:57:08.773983Z",
+    "logged_at": "2026-02-19T20:57:09.419Z",
+    "log_id": "LOG_1771534629419_km50w1f"
+  },
+  {
+    "clinical_recommendation": "No dosage adjustment required per current CPIC guidelines.",
+    "drug": "WARFARIN",
+    "llm_generated_explanation": {
+      "summary": "Clinical reasoning note: Variant detected affecting drug metabolism pathway."
+    },
+    "patient_id": "RIFT_VALIDATION_002",
+    "pharmacogenomic_profile": {
+      "detected_variants": [
+        {
+          "rsid": "rs1057910",
+          "star_allele": "*3"
+        }
+      ],
+      "diplotype": "*1/*3",
+      "gene": "CYP2C9",
+      "phenotype": "Normal Metabolizer (NM)"
+    },
+    "quality_metrics": {
+      "vcf_parsing_success": true
+    },
+    "risk_assessment": {
+      "confidence_score": 0.98,
+      "dosage_guideline": "Standard clinical dosing.",
+      "severity": "low"
+    },
+    "risk_label": "Safe",
+    "timestamp": "2026-02-19T20:57:08.880284Z",
+    "logged_at": "2026-02-19T20:57:09.419Z",
+    "log_id": "LOG_1771534629419_yrogon4"
+  },
+  {
+    "clinical_recommendation": "Avoid higher doses to prevent statin-induced myopathy (muscle damage).",
+    "drug": "SIMVASTATIN",
+    "llm_generated_explanation": {
+      "summary": "Clinical reasoning note: Variant detected affecting drug metabolism pathway."
+    },
+    "patient_id": "RIFT_VALIDATION_002",
+    "pharmacogenomic_profile": {
+      "detected_variants": [
+        {
+          "rsid": "rs4149056",
+          "star_allele": "*5"
+        }
+      ],
+      "diplotype": "*1/*5",
+      "gene": "SLCO1B1",
+      "phenotype": "IM"
+    },
+    "quality_metrics": {
+      "vcf_parsing_success": true
+    },
+    "risk_assessment": {
+      "confidence_score": 0.98,
+      "dosage_guideline": "Limit Simvastatin to 20mg per day.",
+      "severity": "low"
+    },
+    "risk_label": "Adjust Dosage",
+    "timestamp": "2026-02-19T20:57:08.985772Z",
+    "logged_at": "2026-02-19T20:57:09.419Z",
+    "log_id": "LOG_1771534629419_cn0sys6"
+  },
+  {
+    "clinical_recommendation": "High risk of life-threatening myelosuppression. Monitor blood counts weekly.",
+    "drug": "AZATHIOPRINE",
+    "llm_generated_explanation": {
+      "summary": "Clinical reasoning note: Variant detected affecting drug metabolism pathway."
+    },
+    "patient_id": "RIFT_VALIDATION_002",
+    "pharmacogenomic_profile": {
+      "detected_variants": [
+        {
+          "rsid": "rs1800460",
+          "star_allele": "*3A"
+        }
+      ],
+      "diplotype": "*1/*3A",
+      "gene": "TPMT",
+      "phenotype": "PM"
+    },
+    "quality_metrics": {
+      "vcf_parsing_success": true
+    },
+    "risk_assessment": {
+      "confidence_score": 0.98,
+      "dosage_guideline": "Reduce Azathioprine dose by 90% (give 10% of standard).",
+      "severity": "high"
+    },
+    "risk_label": "Toxic",
+    "timestamp": "2026-02-19T20:57:09.103655Z",
+    "logged_at": "2026-02-19T20:57:09.419Z",
+    "log_id": "LOG_1771534629419_hm1k5xf"
+  },
+  {
+    "clinical_recommendation": "Extreme risk of fatal toxicity. Alternative: Use Capecitabine with 50% dose reduction if mandatory.",
+    "drug": "FLUOROURACIL",
+    "llm_generated_explanation": {
+      "summary": "Clinical reasoning note: Variant detected affecting drug metabolism pathway."
+    },
+    "patient_id": "RIFT_VALIDATION_002",
+    "pharmacogenomic_profile": {
+      "detected_variants": [
+        {
+          "rsid": "rs3918290",
+          "star_allele": "*2A"
+        }
+      ],
+      "diplotype": "*1/*2A",
+      "gene": "DPYD",
+      "phenotype": "PM"
+    },
+    "quality_metrics": {
+      "vcf_parsing_success": true
+    },
+    "risk_assessment": {
+      "confidence_score": 0.98,
+      "dosage_guideline": "Reduce dose by 50% or avoid Fluorouracil entirely.",
+      "severity": "critical"
+    },
+    "risk_label": "Toxic",
+    "timestamp": "2026-02-19T20:57:09.208219Z",
+    "logged_at": "2026-02-19T20:57:09.419Z",
+    "log_id": "LOG_1771534629419_mnv7han"
+  },
+  {
+    "patient_id": "PATIENT_001",
+    "drug": "CLOPIDOGREL",
+    "timestamp": "2026-02-19T12:00:00Z",
+    "risk_assessment": {
+      "risk_label": "Ineffective",
+      "confidence_score": 0.87,
+      "severity": "high",
+      "dosage_guideline": "Consider alternative drug like Prasugrel or Ticagrelor"
+    },
+    "pharmacogenomic_profile": {
+      "primary_gene": "CYP2C19",
+      "diplotype": "*2/*2",
+      "phenotype": "Poor Metabolizer",
+      "detected_variants": [
+        {
+          "rsid": "rs4244285",
+          "star_allele": "*2"
+        }
+      ]
+    },
+    "clinical_recommendation": "This patient has a CYP2C19 *2/*2 genotype (poor metabolizer). Clopidogrel requires CYP2C19 activation to work. Poor metabolizers will not convert clopidogrel to its active form, reducing its antiplatelet effect. Consider alternative drugs like Prasugrel (10mg/day) or Ticagrelor (90mg twice daily) that don't require CYP2C19 activation.",
+    "llm_generated_explanation": {
+      "summary": "CYP2C19 is responsible for converting clopidogrel to its active metabolite. The *2/*2 genotype results in no functional enzyme, making clopidogrel ineffective for this patient. This is a known pharmacogenetic interaction with clinical significance."
+    },
+    "quality_metrics": {
+      "vcf_parsing_success": true
+    },
+    "logged_at": "2026-02-19T22:53:03.540Z",
+    "log_id": "LOG_1771541583540_3x7r4i2"
+  },
+  {
+    "patient_id": "PATIENT_001",
+    "drug": "WARFARIN",
+    "timestamp": "2026-02-19T12:00:30Z",
+    "risk_assessment": {
+      "risk_label": "Adjust Dosage",
+      "confidence_score": 0.92,
+      "severity": "moderate",
+      "dosage_guideline": "Reduce initial warfarin dose by 30-50% based on CPIC guidelines"
+    },
+    "pharmacogenomic_profile": {
+      "primary_gene": "CYP2C9",
+      "diplotype": "*1/*3",
+      "phenotype": "Intermediate Metabolizer",
+      "detected_variants": [
+        {
+          "rsid": "rs1057910",
+          "star_allele": "*3"
+        }
+      ]
+    },
+    "clinical_recommendation": "CYP2C9 *1/*3 carriers metabolize warfarin slower than normal. This increases warfarin levels in the blood, raising bleeding risk at standard doses. Start with 2-3mg daily and check INR after 3-5 days. Typical maintenance dose is 30-50% lower than standard. VKORC1 genotyping is also recommended for optimal dosing.",
+    "llm_generated_explanation": {
+      "summary": "Warfarin is metabolized by CYP2C9. The *3 allele produces reduced enzyme activity. Carriers of *1/*3 are intermediate metabolizers who need lower doses to achieve therapeutic INR without excessive bleeding risk."
+    },
+    "quality_metrics": {
+      "vcf_parsing_success": true
+    },
+    "logged_at": "2026-02-19T22:53:03.540Z",
+    "log_id": "LOG_1771541583540_8in1so3"
+  },
+  {
+    "patient_id": "PATIENT_001",
+    "drug": "CODEINE",
+    "timestamp": "2026-02-19T12:01:00Z",
+    "risk_assessment": {
+      "risk_label": "Ineffective",
+      "confidence_score": 0.89,
+      "severity": "moderate",
+      "dosage_guideline": "Use alternative non-opioid or non-CYP2D6 dependent opioid"
+    },
+    "pharmacogenomic_profile": {
+      "primary_gene": "CYP2D6",
+      "diplotype": "*5/*5",
+      "phenotype": "Poor Metabolizer",
+      "detected_variants": [
+        {
+          "rsid": "rs16947",
+          "star_allele": "*5"
+        }
+      ]
+    },
+    "clinical_recommendation": "CYP2D6 *5/*5 is a gene deletion resulting in complete loss of enzyme function (poor metabolizer). Codeine requires CYP2D6 conversion to morphine for its analgesic effect. This patient will not benefit from codeine. Recommended alternatives: Morphine (doesn't require metabolism), Hydromorphone, or non-opioid analgesics. Standard codeine doses (30-60mg) will fail to provide pain relief.",
+    "llm_generated_explanation": {
+      "summary": "Codeine is a prodrug that requires CYP2D6-mediated conversion to morphine to be effective. The *5 deletion completely eliminates CYP2D6 enzyme, making codeine completely ineffective. This is a critical pharmacogenetic finding."
+    },
+    "quality_metrics": {
+      "vcf_parsing_success": true
+    },
+    "logged_at": "2026-02-19T22:53:03.540Z",
+    "log_id": "LOG_1771541583540_8aqx3yz"
+  },
+  {
+    "patient_id": "PATIENT_001",
+    "drug": "SIMVASTATIN",
+    "timestamp": "2026-02-19T12:01:30Z",
+    "risk_assessment": {
+      "risk_label": "Adjust Dosage",
+      "confidence_score": 0.85,
+      "severity": "low",
+      "dosage_guideline": "Limit Simvastatin to maximum 20mg per day"
+    },
+    "pharmacogenomic_profile": {
+      "primary_gene": "SLCO1B1",
+      "diplotype": "*1/*5",
+      "phenotype": "Intermediate Metabolizer",
+      "detected_variants": [
+        {
+          "rsid": "rs4149056",
+          "star_allele": "*5"
+        }
+      ]
+    },
+    "clinical_recommendation": "SLCO1B1 *1/*5 carriers have reduced uptake transporter activity. Simvastatin is transported by SLCO1B1, so reduced activity leads to increased statin accumulation and myopathy risk. Limit dose to 20mg/day maximum or consider rosuvastatin (doesn't use this transporter). Monitor for muscle pain and check CPK levels.",
+    "llm_generated_explanation": {
+      "summary": "SLCO1B1 encodes a transporter critical for simvastatin hepatic uptake. The *5 variant reduces transporter function, increasing simvastatin concentrations and myopathy risk. This is a known pharmacogenetic safety concern."
+    },
+    "quality_metrics": {
+      "vcf_parsing_success": true
+    },
+    "logged_at": "2026-02-19T22:53:03.540Z",
+    "log_id": "LOG_1771541583540_nsnbx8k"
+  },
+  {
+    "patient_id": "PATIENT_001",
+    "drug": "AZATHIOPRINE",
+    "timestamp": "2026-02-19T12:02:00Z",
+    "risk_assessment": {
+      "risk_label": "Toxic",
+      "confidence_score": 0.94,
+      "severity": "high",
+      "dosage_guideline": "Reduce azathioprine dose by 90% (give 10% of standard dose)"
+    },
+    "pharmacogenomic_profile": {
+      "primary_gene": "TPMT",
+      "diplotype": "*1/*3A",
+      "phenotype": "Poor Metabolizer",
+      "detected_variants": [
+        {
+          "rsid": "rs1800460",
+          "star_allele": "*3A"
+        }
+      ]
+    },
+    "clinical_recommendation": "TPMT *1/*3A results in significantly reduced enzyme activity. Azathioprine is converted to toxic metabolites by TPMT. Poor metabolizers accumulate dangerous levels of active metabolites, causing severe myelosuppression, infections, and potentially fatal bone marrow failure. Reduce dose to 10% of standard or use alternative immunosuppressant (e.g., mycophenolate). Requires weekly CBC monitoring initially.",
+    "llm_generated_explanation": {
+      "summary": "TPMT metabolizes azathioprine and its active components. Poor metabolizers (*1/*3A) cannot adequately clear toxic metabolites, making standard dosing life-threatening. This is a critical finding requiring immediate dose adjustment."
+    },
+    "quality_metrics": {
+      "vcf_parsing_success": true
+    },
+    "logged_at": "2026-02-19T22:53:03.540Z",
+    "log_id": "LOG_1771541583540_c21e034"
+  },
+  {
+    "patient_id": "PATIENT_001",
+    "drug": "FLUOROURACIL",
+    "timestamp": "2026-02-19T12:02:30Z",
+    "risk_assessment": {
+      "risk_label": "Toxic",
+      "confidence_score": 0.96,
+      "severity": "critical",
+      "dosage_guideline": "Reduce dose by 75% or consider alternative chemotherapy"
+    },
+    "pharmacogenomic_profile": {
+      "primary_gene": "DPYD",
+      "diplotype": "*1/*2A",
+      "phenotype": "Poor Metabolizer",
+      "detected_variants": [
+        {
+          "rsid": "rs3918290",
+          "star_allele": "*2A"
+        }
+      ]
+    },
+    "clinical_recommendation": "DPYD *1/*2A results in severely reduced dihydropyrimidine dehydrogenase enzyme activity. Fluorouracil is a prodrug requiring DPYD metabolism for inactivation. Poor metabolizers accumulate toxic levels, causing life-threatening toxicity: severe diarrhea, mucositis, bone marrow suppression, and potentially fatal sepsis. Either reduce dose by 75% with intensive monitoring or use alternative chemotherapy (e.g., capecitabine with 50% reduction). DPYD testing is recommended before any 5-FU-based chemotherapy.",
+    "llm_generated_explanation": {
+      "summary": "DPYD deficiency is a major cause of severe 5-fluorouracil toxicity. The *2A variant causes poor metabolizer status, requiring substantial dose reduction or drug avoidance. This is a life-critical finding for cancer patients."
+    },
+    "quality_metrics": {
+      "vcf_parsing_success": true
+    },
+    "logged_at": "2026-02-19T22:53:03.540Z",
+    "log_id": "LOG_1771541583540_630ci1j"
+  }
+]

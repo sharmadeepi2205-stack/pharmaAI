@@ -1,0 +1,8 @@
+##fileformat=VCFv4.2
+##FILTER=<ID=PASS,Description="All filters passed">
+##INFO=<ID=PX,Number=1,Type=String,Description="Pharmacogenomic Gene">
+##FORMAT=<ID=GT,Number=1,Type=String,Description="Genotype">
+#CHROM	POS	ID	REF	ALT	QUAL	FILTER	INFO	FORMAT	SAMPLE
+chr1	97544301	rs3918290	C	T	.	PASS	PX=DPYD	GT	0/1
+chr22	42127941	rs1065852	G	A	.	PASS	PX=CYP2D6	GT	1/1
+chr10	94762733	rs4244285	G	A	.	PASS	PX=CYP2C19	GT	0/1

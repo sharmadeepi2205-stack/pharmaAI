@@ -1,0 +1,10 @@
+services:
+  ml:
+    build: .
+    container_name: pharmaguard-ml
+    ports:
+      - "8000:8000"
+    volumes:
+      - .:/app
+    environment:
+      - FLASK_ENV=development
