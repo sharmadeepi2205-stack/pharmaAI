@@ -5,13 +5,14 @@ const fs = require('fs')
 
 const app = express()
 
+// Middleware
 app.use(cors())
 app.use(express.json())
 
-// Health check endpoint (for Render monitoring)
+// Root health check endpoint - MUST be before other middleware
 app.get('/', (req, res) => {
-  console.log('GET / - Health check endpoint called')
-  res.status(200).json({ 
+  console.log('✓ GET / endpoint hit')
+  return res.status(200).json({ 
     success: true,
     message: 'PharmaGuard Backend is running',
     version: '1.0.0',
@@ -19,31 +20,13 @@ app.get('/', (req, res) => {
   })
 })
 
-// Load routes after health check
-let analyzeRoute
-try {
-  analyzeRoute = require('./routes/analyze')
-  console.log('✓ Analyze route loaded successfully')
-} catch (err) {
-  console.error('⚠ Warning: Error loading analyze route:', err.message)
-  console.error('Stack:', err.stack)
-  // Don't exit - health check and logs endpoints will still work
-  analyzeRoute = express.Router()
-  analyzeRoute.post('/', (req, res) => {
-    res.status(500).json({ 
-      success: false, 
-      error: 'Analyze service unavailable - route failed to load' 
-    })
-  })
-}
-
 // Ensure logs directory exists
 const logsDir = path.join(__dirname, 'logs')
 if (!fs.existsSync(logsDir)) {
   fs.mkdirSync(logsDir, { recursive: true })
 }
 
-// Get all logs (define BEFORE app.use('/api', analyzeRoute))
+// Get all logs
 app.get('/api/logs', (req, res) => {
   try {
     const logsFile = path.join(logsDir, 'analysis_logs.json')
@@ -66,7 +49,7 @@ app.get('/api/logs', (req, res) => {
   }
 })
 
-// Clear logs (optional)
+// Clear logs
 app.delete('/api/logs', (req, res) => {
   try {
     const logsFile = path.join(logsDir, 'analysis_logs.json')
@@ -80,24 +63,32 @@ app.delete('/api/logs', (req, res) => {
   }
 })
 
-app.use('/api', analyzeRoute)
+// Load and use analyze routes
+let analyzeRoute
+try {
+  analyzeRoute = require('./routes/analyze')
+  console.log('✓ Analyze route loaded successfully')
+  app.use('/api', analyzeRoute)
+} catch (err) {
+  console.error('⚠ Error loading analyze route:', err.message)
+  // Still start server with just health check
+}
 
-// Error handling middleware
-app.use((err, req, res, next) => {
-  console.error('Error:', err)
-  res.status(500).json({ success: false, error: err.message})
+// 404 handler - must be LAST
+app.use((req, res) => {
+  res.status(404).json({ success: false, error: 'Endpoint not found', path: req.path })
 })
 
-// 404 handler
-app.use((req, res) => {
-  res.status(404).json({ success: false, error: 'Endpoint not found' })
+// Error handler - must be LAST
+app.use((err, req, res, next) => {
+  console.error('Error:', err)
+  res.status(500).json({ success: false, error: err.message })
 })
 
 const PORT = process.env.PORT || 5000
-app.listen(PORT, () => {
-  console.log(`Backend listening on ${PORT}`)
-  console.log(`Server running at http://localhost:${PORT}`)
+const server = app.listen(PORT, () => {
+  console.log(`✓ Backend listening on port ${PORT}`)
+  console.log(`✓ Health check: GET http://localhost:${PORT}/`)
 })
 
-// Export logsDir for use in other modules
-module.exports = { logsDir }
+module.exports = { logsDir, server }
