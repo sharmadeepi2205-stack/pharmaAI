@@ -23,9 +23,18 @@ app.get('/', (req, res) => {
 let analyzeRoute
 try {
   analyzeRoute = require('./routes/analyze')
+  console.log('✓ Analyze route loaded successfully')
 } catch (err) {
-  console.error('Error loading analyze route:', err)
-  process.exit(1)
+  console.error('⚠ Warning: Error loading analyze route:', err.message)
+  console.error('Stack:', err.stack)
+  // Don't exit - health check and logs endpoints will still work
+  analyzeRoute = express.Router()
+  analyzeRoute.post('/', (req, res) => {
+    res.status(500).json({ 
+      success: false, 
+      error: 'Analyze service unavailable - route failed to load' 
+    })
+  })
 }
 
 // Ensure logs directory exists
