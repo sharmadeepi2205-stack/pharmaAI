@@ -2,7 +2,7 @@ const express = require('express')
 const cors = require('cors')
 const path = require('path')
 const fs = require('fs')
-const analyzeRoute = require('./routes/analyze')
+
 const app = express()
 
 app.use(cors())
@@ -10,13 +10,23 @@ app.use(express.json())
 
 // Health check endpoint (for Render monitoring)
 app.get('/', (req, res) => {
-  res.json({ 
+  console.log('GET / - Health check endpoint called')
+  res.status(200).json({ 
     success: true,
     message: 'PharmaGuard Backend is running',
     version: '1.0.0',
     timestamp: new Date().toISOString()
   })
 })
+
+// Load routes after health check
+let analyzeRoute
+try {
+  analyzeRoute = require('./routes/analyze')
+} catch (err) {
+  console.error('Error loading analyze route:', err)
+  process.exit(1)
+}
 
 // Ensure logs directory exists
 const logsDir = path.join(__dirname, 'logs')
@@ -63,8 +73,22 @@ app.delete('/api/logs', (req, res) => {
 
 app.use('/api', analyzeRoute)
 
+// Error handling middleware
+app.use((err, req, res, next) => {
+  console.error('Error:', err)
+  res.status(500).json({ success: false, error: err.message})
+})
+
+// 404 handler
+app.use((req, res) => {
+  res.status(404).json({ success: false, error: 'Endpoint not found' })
+})
+
 const PORT = process.env.PORT || 5000
-app.listen(PORT, ()=> console.log(`Backend listening on ${PORT}`))
+app.listen(PORT, () => {
+  console.log(`Backend listening on ${PORT}`)
+  console.log(`Server running at http://localhost:${PORT}`)
+})
 
 // Export logsDir for use in other modules
 module.exports = { logsDir }
