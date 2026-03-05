@@ -12,5 +12,5 @@ RUN micromamba install -y -n base -c conda-forge -c bioconda -c defaults python=
 ENV PYTHONUNBUFFERED=1
 EXPOSE 8000
 
-# Default command runs the Flask app
-CMD ["python", "app.py"]
+# Use Gunicorn with proper port binding
+CMD ["gunicorn", "app:app", "--bind", "0.0.0.0:8000", "--workers", "4", "--worker-class", "sync", "--timeout", "120"]
