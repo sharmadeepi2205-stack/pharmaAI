@@ -6,7 +6,10 @@ const fs = require('fs')
 const app = express()
 
 // Middleware
-app.use(cors())
+app.use(cors({
+  origin: 'https://pharmaai-up8b.onrender.com',
+  credentials: true
+}))
 app.use(express.json())
 
 // Root health check endpoint - MUST be before other middleware
