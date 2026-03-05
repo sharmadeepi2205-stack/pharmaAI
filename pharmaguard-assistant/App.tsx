@@ -1,6 +1,6 @@
 
 import React, { useState, useRef, useEffect } from 'react';
-import { GoogleGenAI } from "@google/genai";
+import { GoogleGenerativeAI } from "@google/generative-ai";
 
 // --- Types ---
 interface Message {
@@ -66,17 +66,19 @@ const PharmaChatWidget: React.FC = () => {
     setIsLoading(true);
 
     try {
-      const ai = new GoogleGenAI({ apiKey: process.env.API_KEY || "" });
-      const chat = ai.chats.create({
-        model: 'gemini-3-flash-preview',
-        config: {
-          systemInstruction: PHARMAGUARD_CONTEXT,
+      const apiKey = process.env.VITE_API_KEY || "";
+      const ai = new GoogleGenerativeAI(apiKey);
+      const model = ai.getGenerativeModel({ 
+        model: 'gemini-2.0-flash',
+        systemInstruction: PHARMAGUARD_CONTEXT,
+        generationConfig: {
           temperature: 0.7,
         },
       });
+      const chat = model.startChat();
 
-      const response = await chat.sendMessage({ message: input });
-      const responseText = response.text;
+      const response = await chat.sendMessage(input);
+      const responseText = response.response.text();
 
       const aiMsg: Message = { 
         role: 'model', 
