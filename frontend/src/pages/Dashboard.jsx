@@ -5,7 +5,7 @@ import ResultsPanel from '../components/ResultsPanel'
 import normalizeResult from '../utils/normalizeResult'
 import Header from '../components/Header'
 import { useAnalysis } from '../context/AnalysisContext'
-import axios from 'axios'
+import api from '../services/api'
 
 export default function Dashboard(){
   const { analysisResult, setAnalysisResult, file, setFile, drugs, setDrugs, uploadError, setUploadError, clearAll } = useAnalysis()
@@ -23,7 +23,7 @@ export default function Dashboard(){
       const form = new FormData()
       form.append('vcf_file', file)
       form.append('drugs', drugs.join(','))
-      const resp = await axios.post('/api/analyze', form, { headers: {'Content-Type':'multipart/form-data'} })
+      const resp = await api.post('/analyze', form, { headers: {'Content-Type':'multipart/form-data'} })
       // normalize backend JSON for UI safety (do not mutate resp.data)
       const normalized = normalizeResult(resp.data)
       setAnalysisResult({ normalized, raw: resp.data })
