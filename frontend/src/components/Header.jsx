@@ -1,6 +1,8 @@
 import React, { useState, useEffect } from 'react'
 import { Link, useLocation, useNavigate } from 'react-router-dom'
 
+const API_BASE_URL = import.meta.env.VITE_API_URL || 'http://localhost:5000'
+
 export default function Header(){
   const location = useLocation()
   const navigate = useNavigate()
@@ -10,7 +12,7 @@ export default function Header(){
   useEffect(() => {
     const fetchLogsCount = async () => {
       try {
-        const response = await fetch('/api/logs')
+        const response = await fetch(`${API_BASE_URL}/api/logs`)
         const data = await response.json()
         if (data.success) {
           setLogsCount(data.total || 0)

@@ -1,6 +1,8 @@
 import React, { useState, useEffect } from 'react'
 import Header from './Header'
 
+const API_BASE_URL = import.meta.env.VITE_API_URL || 'http://localhost:5000'
+
 function RiskBadge({ risk_label }) {
   const badges = {
     'Safe': { bg: 'bg-green-900', text: 'text-green-200' },
@@ -37,7 +39,7 @@ export default function HistoricalLogs() {
   const fetchLogs = async () => {
     try {
       setLoading(false)
-      const response = await fetch('/api/logs')
+      const response = await fetch(`${API_BASE_URL}/api/logs`)
       
       if (!response.ok) {
         throw new Error(`HTTP error! status: ${response.status}`)
@@ -89,7 +91,7 @@ export default function HistoricalLogs() {
     }
 
     try {
-      const response = await fetch('/api/logs', {
+      const response = await fetch(`${API_BASE_URL}/api/logs`, {
         method: 'DELETE'
       })
       
