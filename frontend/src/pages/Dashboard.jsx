@@ -23,7 +23,9 @@ export default function Dashboard(){
       const form = new FormData()
       form.append('vcf_file', file)
       form.append('drugs', drugs.join(','))
-      const resp = await api.post('/analyze', form, { headers: {'Content-Type':'multipart/form-data'} })
+      // IMPORTANT: Do NOT manually set Content-Type header for FormData
+      // axios will automatically set it with the correct boundary
+      const resp = await api.post('/analyze', form)
       // normalize backend JSON for UI safety (do not mutate resp.data)
       const normalized = normalizeResult(resp.data)
       setAnalysisResult({ normalized, raw: resp.data })
