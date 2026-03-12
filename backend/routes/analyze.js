@@ -10,6 +10,12 @@ const PYTHON_VALIDATOR_URL = process.env.PYTHON_VALIDATOR_URL || ''
 const FORWARD_TIMEOUT = parseInt(process.env.FORWARD_TIMEOUT_MS || '10000', 10) // ms
 const FORWARD_RETRIES = parseInt(process.env.FORWARD_RETRIES || '2', 10)
 
+console.log('📋 Analyze Route Configuration:')
+console.log('  PYTHON_BACKEND_URL:', PYTHON_BACKEND_URL || '(not set)')
+console.log('  PYTHON_VALIDATOR_URL:', PYTHON_VALIDATOR_URL || '(not set)')
+console.log('  FORWARD_TIMEOUT:', FORWARD_TIMEOUT, 'ms')
+console.log('  FORWARD_RETRIES:', FORWARD_RETRIES)
+
 const router = express.Router();
 
 // Logs directory
@@ -82,12 +88,18 @@ const upload = multer({
 router.post('/analyze', upload.single('vcf_file'), async (req, res) => {
   // Helper to send structured VCF validation errors
   function vcfValidationError(message){
+    console.error('❌ VCF Validation Error:', message)
     return res.status(400).json({ success: false, error_type: 'VCF_VALIDATION_ERROR', message })
   }
 
   try {
+    console.log('📥 Analyze request received')
+    console.log('File:', req.file?.originalname)
+    console.log('Drugs:', req.body.drugs)
+    
     // 1. File exists
     if (!req.file) {
+      console.error('❌ No file provided in request')
       return vcfValidationError('Please upload a VCF file before proceeding.')
     }
 
