@@ -5,7 +5,7 @@ from cyvcf2 import VCF
 from groq import Groq
 import os
 
-GROQ_API_KEY = os.getenv("GROQ_API_KEY")
+GEMINI_API_KEY = os.getenv("GEMINI_API_KEY")
 # ==========================================
 # 1. SCIENTIFIC KNOWLEDGE BASE (CPIC & Star Alleles)
 # ==========================================
@@ -54,11 +54,11 @@ CLINICAL_RESOURCES = {
 # ==========================================
 
 def generate_clinical_reasoning(gene, drug, risk, variants):
-    if not GROQ_API_KEY or "YOUR" in GROQ_API_KEY:
+    if not GEMINI_API_KEY or "YOUR" in GEMINI_API_KEY:
         return {"summary": f"Pharmacogenomic analysis of {gene} indicates {risk} status."}
 
     try:
-        client = Groq(api_key=GROQ_API_KEY)
+        client = Groq(api_key=GEMINI_API_KEY)
         # Specifically asking for "Biological Mechanism" as per PS Page 1
         prompt = f"""
         Explain the biological mechanism for a patient with {gene} variants {variants} taking {drug}.
