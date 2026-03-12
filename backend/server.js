@@ -7,7 +7,11 @@ const app = express()
 
 // Middleware
 app.use(cors({
-  origin: 'https://pharmaai-up8b.onrender.com',
+  origin: [
+    'https://pharmaai-up8b.onrender.com',  // Old frontend URL
+    'https://pharmaai-9znr.onrender.com',  // New frontend URL
+    /^https:\/\/pharmaai.*\.onrender\.com$/  // Allow any pharmaai render domain
+  ],
   credentials: true
 }))
 app.use(express.json())
