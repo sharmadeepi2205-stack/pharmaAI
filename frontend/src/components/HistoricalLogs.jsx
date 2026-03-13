@@ -43,7 +43,7 @@ export default function HistoricalLogs() {
     fetchLogs()
     const interval = setInterval(() => {
       fetchLogs()
-    }, 3000)
+    }, 180000)
 
     return () => clearInterval(interval)
   }, [])

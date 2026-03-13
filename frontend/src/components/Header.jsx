@@ -124,6 +124,7 @@ export default function Header() {
 
               {/* Notifications Bell */}
               <button
+                onClick={() => navigate('/notifications')}
                 className="relative p-2 text-slate-400 hover:text-cyan-400 hover:bg-slate-700/30 rounded-lg transition-colors duration-200"
                 aria-label="Notifications"
               >
