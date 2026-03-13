@@ -1,8 +1,10 @@
 import React, { useState, useEffect } from 'react'
-import { Bell, Trash2, CheckCircle, AlertCircle, Clock } from 'lucide-react'
+import { useNavigate } from 'react-router-dom'
+import { Bell, Trash2, CheckCircle, AlertCircle, Clock, ArrowLeft } from 'lucide-react'
 import api from '../services/api'
 
 export default function Notifications() {
+  const navigate = useNavigate()
   const [notifications, setNotifications] = useState([])
   const [loading, setLoading] = useState(true)
   const [searchFilter, setSearchFilter] = useState('')
@@ -91,6 +93,15 @@ export default function Notifications() {
   return (
     <div className="min-h-screen bg-slate-900 text-slate-100 py-6 px-4 sm:px-6 lg:px-8">
       <div className="max-w-4xl mx-auto">
+        {/* Back Button */}
+        <button
+          onClick={() => navigate(-1)}
+          className="mb-6 inline-flex items-center gap-2 px-4 py-2 text-slate-400 hover:text-cyan-400 hover:bg-slate-800 rounded-lg transition-colors duration-200"
+        >
+          <ArrowLeft size={20} />
+          <span>Back</span>
+        </button>
+
         {/* Header */}
         <div className="mb-8">
           <div className="flex items-center gap-3 mb-4">
