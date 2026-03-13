@@ -6,6 +6,7 @@ import Landing from './pages/Landing'
 import Dashboard from './pages/Dashboard'
 import HistoricalLogs from './components/HistoricalLogs'
 import Analytics from './pages/Analytics'
+import Settings from './pages/Settings'
 import ChatBot from './components/ChatBot'
 import { AnalysisProvider } from './context/AnalysisContext'
 
@@ -18,6 +19,7 @@ function App(){
           <Route path="/dashboard" element={<Dashboard/>} />
           <Route path="/logs" element={<HistoricalLogs/>} />
           <Route path="/analytics" element={<Analytics/>} />
+          <Route path="/settings" element={<Settings/>} />
         </Routes>
         <ChatBot />
       </BrowserRouter>

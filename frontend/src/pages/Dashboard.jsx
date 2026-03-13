@@ -18,6 +18,7 @@ export default function Dashboard(){
 
   async function handleAnalyze(){
     setError('')
+    setAnalysisResult(null)
     setLoading(true)
     try{
       const form = new FormData()
@@ -26,12 +27,32 @@ export default function Dashboard(){
       // IMPORTANT: Do NOT manually set Content-Type header for FormData
       // axios will automatically set it with the correct boundary
       const resp = await api.post('/analyze', form)
+      
+      // Check if response has data
+      if (!resp.data || typeof resp.data !== 'object') {
+        throw new Error('Invalid response format from server')
+      }
+      
+      // Check if the response indicates an error (even if HTTP 200)
+      if (resp.data.success === false || resp.data.error_type) {
+        throw new Error(resp.data.message || 'Server returned an error')
+      }
+      
       // normalize backend JSON for UI safety (do not mutate resp.data)
       const normalized = normalizeResult(resp.data)
+      
+      // Validate normalized result
+      if (!normalized) {
+        throw new Error('Failed to process analysis results')
+      }
+      
       setAnalysisResult({ normalized, raw: resp.data })
+      setError('')
       setToast({type:'success', message:'✅ Analysis complete! Results saved to logs.'})
     }catch(e){
-      setError('Unable to analyze. Please try again later.')
+      console.error('Analysis error:', e)
+      setAnalysisResult(null)
+      setError(e.response?.data?.message || e.message || 'Unable to analyze. Please try again later.')
       setToast({type:'error', message:'❌ Analysis failed'})
     }finally{ setLoading(false); setTimeout(()=>setToast(null),3000) }
   }
@@ -42,23 +63,23 @@ export default function Dashboard(){
   }
 
   return (
-    <div className="min-h-screen bg-black text-slate-100">
+    <div className="min-h-screen bg-slate-950 text-slate-100">
       <Header />
 
       <div className="max-w-[1600px] mx-auto px-4 sm:px-6 py-8">
         <div className="space-y-8">
           {/* Input Section */}
-          <section className="bg-slate-950 rounded-lg border border-slate-800 p-6 shadow-sm">
+          <section className="bg-gradient-to-br from-slate-900 via-slate-800 to-slate-900 rounded-lg border border-cyan-600/50 p-6 shadow-lg">
             <h2 className="text-xl font-bold text-cyan-400 mb-6">Input</h2>
             <div className="space-y-6">
               <UploadZone file={file} setFile={setFile} uploadError={uploadError} setUploadError={setUploadError} />
               <DrugInput drugs={drugs} setDrugs={setDrugs} />
 
-              <div className="pt-4 border-t border-slate-800 flex gap-3">
-                <button disabled={!canAnalyze || loading} onClick={handleAnalyze} className="flex-1 px-6 py-2.5 bg-cyan-600 hover:bg-cyan-700 disabled:bg-slate-800 disabled:text-slate-500 text-white font-semibold rounded-lg transition-colors duration-200">
+              <div className="pt-4 border-t border-cyan-600/50 flex gap-3">
+                <button disabled={!canAnalyze || loading} onClick={handleAnalyze} className="flex-1 px-6 py-2.5 bg-gradient-to-r from-cyan-600 to-cyan-500 hover:from-cyan-500 hover:to-cyan-400 disabled:bg-slate-700 disabled:text-slate-400 text-white font-semibold rounded-lg transition-all duration-200 shadow-lg shadow-cyan-600/30 disabled:shadow-none">
                   {loading? 'Analyzing genomic variants…' : 'Analyze'}
                 </button>
-                <button onClick={resetAll} className="px-4 py-2.5 bg-slate-800 hover:bg-slate-700 text-slate-100 font-semibold rounded-lg transition-colors duration-200">
+                <button onClick={resetAll} className="px-4 py-2.5 bg-slate-700 hover:bg-slate-600 text-slate-100 font-semibold rounded-lg transition-colors duration-200 border border-slate-600 hover:border-slate-500">
                   Reset
                 </button>
               </div>
@@ -68,7 +89,7 @@ export default function Dashboard(){
           </section>
 
           {/* Results Section */}
-          <section className="bg-slate-950 rounded-lg border border-slate-800 p-6 shadow-sm">
+          <section className="bg-gradient-to-br from-slate-900 via-slate-800 to-slate-900 rounded-lg border border-cyan-600/50 p-6 shadow-lg">
             <h2 className="text-xl font-bold text-cyan-400 mb-4">Results</h2>
             <div className="text-sm text-slate-500 mb-4">{analysisResult?.normalized?.timestamp}</div>
 
@@ -81,6 +102,8 @@ export default function Dashboard(){
                   <div className="h-40 skeleton rounded"></div>
                 </div>
               </div>
+            ) : error ? (
+              <div className="text-slate-400 text-center py-8">Analysis failed. Please check the error message above and try again.</div>
             ) : (
               (analysisResult) ? <ResultsPanel data={analysisResult.normalized} raw={analysisResult.raw} selectedDrugs={drugs} /> : <div className="text-slate-400 text-center py-8">No results yet. Upload a VCF file and select drugs, then click Analyze.</div>
             )}
@@ -88,7 +111,7 @@ export default function Dashboard(){
         </div>
       </div>
 
-      <footer className="max-w-7xl mx-auto px-6 py-6 mt-8 text-xs text-slate-500 border-t border-slate-800">
+      <footer className="max-w-7xl mx-auto px-6 py-6 mt-8 text-xs text-slate-500 border-t border-cyan-600/50">
         Recommendations provided by this application are based on CPIC (Clinical Pharmacogenetics Implementation Consortium) guidelines and scientific evidence. This tool is for informational purposes only and does not replace medical advice.
       </footer>
 

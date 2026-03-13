@@ -8,9 +8,13 @@ const app = express()
 // Middleware
 app.use(cors({
   origin: [
+    'http://localhost:5174',   // Local Vite development
+    'http://localhost:5173',   // Vite alternative port
+    'http://localhost:3000',   // Common React dev port
     'https://pharmaai-up8b.onrender.com',  // Old frontend URL
     'https://pharmaai-9znr.onrender.com',  // New frontend URL
-    /^https:\/\/pharmaai.*\.onrender\.com$/  // Allow any pharmaai render domain
+    /^https:\/\/pharmaai.*\.onrender\.com$/,  // Allow any pharmaai render domain
+    /^http:\/\/localhost:\d+$/  // Allow any localhost port
   ],
   credentials: true
 }))
